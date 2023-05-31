@@ -1,0 +1,80 @@
+<h1>{{ title }}</h1>
+
+<div *ngFor="let item of menuItemsDetails">
+
+  <div class="card">
+
+        <div class="card-header">
+
+          <h2>{{item.itemId}}</h2>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="row-align-items-center">
+
+            <div class="col-sm-4">
+
+              <img [src]="item.imageurl" />
+
+            </div>
+
+            <div class="col-sm-5">
+
+              <input type="text" class="form-control my-4" [value]="item.itemName" />
+
+              <input type="text" class="form-control my-4" [value]="item.ItemPrice" />
+
+            </div>
+
+              <div class="col-sm-2">
+
+              <ul class="navbar" style="list-style-type: none;">
+
+                <li class="nav-item">
+
+                  <a class="btn btn-primary" btn-sm (click)="getItemById(item.itemId)">
+
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+
+                  </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                  <a class="btn btn-danger" btn-sm (click)="getItemById(item.itemId)">
+
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+
+                  </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                  <a class="btn btn-success" btn-sm (click)="getItemById(item.itemId)">
+
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+
+                  </a>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+  <h3>{{ item.itemName }}</h3>
+
+</div>
